@@ -1,7 +1,5 @@
 package com.hibernate.DemoHibernate;
 
-import java.util.List;
-
 import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,17 +13,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table( name = "exs" )
+@Table( name = "people" )
 @Getter
 @Setter
 @ToString
 @Cacheable
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "SecondLevel")
-public class ex {
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class Person {
 
 	@Id
 	private int id;
 	private String name;
-	
-	
+	private int mark;
 }
